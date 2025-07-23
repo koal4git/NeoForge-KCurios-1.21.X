@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "kcurios:raw_steel"
+  },
+  "result": {
+    "id": "kcurios:steel_ingot"
+  }
+}

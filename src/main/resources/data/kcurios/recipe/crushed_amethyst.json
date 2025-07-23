@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "kcurios:crushed_amethyst_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "kcurios:crushed_amethyst"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "kcurios:crushed_emeralds"
+    }
+  },
+  "pattern": [
+    "   ",
+    "   ",
+    " BB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "kcurios:emerald_ingot"
+  }
+}
