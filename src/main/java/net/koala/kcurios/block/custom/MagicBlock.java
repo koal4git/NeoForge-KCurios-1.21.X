@@ -1,6 +1,7 @@
 package net.koala.kcurios.block.custom;
 
 import net.koala.kcurios.item.ModItems;
+import net.koala.kcurios.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -48,10 +49,19 @@ public class MagicBlock extends Block {
                 itemEntity.setItem(new ItemStack(ModItems.EMERALD_INGOT.get(), itemEntity.getItem().getCount()));
                 level.playSound(entity, pos, SoundEvents.DRAGON_FIREBALL_EXPLODE, SoundSource.BLOCKS, 1f, 0.5f);
             }
+
+            if (isValidItem(itemEntity.getItem())) {
+                itemEntity.setItem(new ItemStack(ModItems.STEEL_INGOT.get(), itemEntity.getItem().getCount()));
+                level.playSound(entity, pos, SoundEvents.DRAGON_FIREBALL_EXPLODE, SoundSource.BLOCKS, 1f, 0.5f);
+            }
         }
 
 
         super.stepOn(level, pos, state, entity);
+    }
+
+    private boolean isValidItem(ItemStack item) {
+        return item.is(ModTags.Items.TRANSFORMABLE_ITEMS);
     }
 
     @Override
