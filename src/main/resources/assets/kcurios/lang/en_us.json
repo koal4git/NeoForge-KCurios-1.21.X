@@ -1,0 +1,51 @@
+{
+  "itemGroup.examplemod": "Example Mod Tab",
+  "block.examplemod.example_block": "Example Block",
+  "item.examplemod.example_item": "Example Item",
+
+
+  "item.kcurios.crushed_emeralds": "Crushed Emeralds",
+  "item.kcurios.crushed_amethyst": "Crushed Amethyst",
+  "item.kcurios.raw_steel": "Raw Steel",
+  "item.kcurios.steel_ingot": "Steel Ingot",
+  "item.kcurios.emerald_ingot": "Emerald Ingot",
+
+
+  "item.kcurios.chisel": "Chisel",
+  
+  
+  "item.kcurios.bell_pepper": "Bell Pepper",
+  "item.kcurios.dry_ice": "Dry Ice",
+  "item.kcurios.flour": "Flour",
+
+
+  "block.kcurios.crushed_emerald_block": "Crushed Emerald Block",
+  "block.kcurios.crushed_amethyst_block": "Crushed Amethyst Block",
+  "block.kcurios.magic_block": "Magic Block",
+
+
+
+  "block.kcurios.steel_ore": "Steel Ore",
+  "block.kcurios.steel_block": "Steel Block",
+  "block.kcurios.deepslate_steel_ore": "Deepslate Steel Ore",
+
+  "block.kcurios.steel_stairs": "Steel Stairs",
+  "block.kcurios.steel_slab": "Steel Slab",
+  "block.kcurios.steel_pressure_plate": "Steel Pressure Plate",
+  "block.kcurios.steel_button": "Steel Button",
+  "block.kcurios.steel_fence": "Steel Fence",
+  "block.kcurios.steel_fence_gate": "Steel Fence Gate",
+  "block.kcurios.steel_wall": "Steel Wall",
+  "block.kcurios.steel_door": "Steel Door",
+  "block.kcurios.steel_trapdoor": "Steel Trapdoor",
+
+
+  "tooltip.kcurios.shift_down": "Hold Shift For More Info",
+  "tooltip.kcurios.magic_block.tooltip": "This block §c burns §f items to transform them",
+  "tooltip.kcurios.chisel.tooltip": "This Tool lets you Chisel Blocks into Their Respective Blocks",
+  "tooltip.kcurios.flour.tooltip": "This is a fuel source... careful it doesnt explode",
+
+
+  "creativetab.kcurios.kcurios_items": "KCurios Items",
+  "creativetab.kcurios.kcurios_blocks": "KCurios Blocks"
+}

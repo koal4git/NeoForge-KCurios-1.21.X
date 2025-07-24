@@ -35,7 +35,25 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.CRUSHED_EMERALD_BLOCK.get());
         dropSelf(ModBlocks.CRUSHED_AMETHYST_BLOCK.get());
         dropSelf(ModBlocks.MAGIC_BLOCK.get());
-        dropSelf(ModBlocks.STEEL_BLOCK.value());
+        dropSelf(ModBlocks.STEEL_BLOCK.get());
+        dropSelf(ModBlocks.AMETHYST_LAMP.get());
+
+        dropSelf(ModBlocks.STEEL_STAIRS.get());
+
+        add(ModBlocks.STEEL_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.STEEL_SLAB.get()));
+
+        dropSelf(ModBlocks.STEEL_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.STEEL_BUTTON.get());
+        dropSelf(ModBlocks.STEEL_FENCE.get());
+        dropSelf(ModBlocks.STEEL_FENCE_GATE.get());
+        dropSelf(ModBlocks.STEEL_WALL.get());
+        dropSelf(ModBlocks.STEEL_TRAPDOOR.get());
+
+        add(ModBlocks.STEEL_DOOR.get(),
+                block -> createDoorTable(ModBlocks.STEEL_DOOR.get()));
+
+
 
         add(ModBlocks.STEEL_ORE.get(),
                 block -> createOreDrop(ModBlocks.STEEL_ORE.get(), ModItems.RAW_STEEL.get()));

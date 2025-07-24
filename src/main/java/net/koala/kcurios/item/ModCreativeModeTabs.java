@@ -49,6 +49,24 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.DEEPSLATE_STEEL_ORE);
                         output.accept(ModBlocks.STEEL_BLOCK);
                         output.accept(ModBlocks.MAGIC_BLOCK);
+                        output.accept(ModBlocks.AMETHYST_LAMP);
+
+
+                        //steel non blocks
+                        output.accept(ModBlocks.STEEL_STAIRS);
+                        output.accept(ModBlocks.STEEL_SLAB);
+
+                        output.accept(ModBlocks.STEEL_PRESSURE_PLATE);
+                        output.accept(ModBlocks.STEEL_BUTTON);
+
+                        output.accept(ModBlocks.STEEL_FENCE);
+                        output.accept(ModBlocks.STEEL_FENCE_GATE);
+                        output.accept(ModBlocks.STEEL_WALL);
+
+                        output.accept(ModBlocks.STEEL_DOOR);
+                        output.accept(ModBlocks.STEEL_TRAPDOOR);
+
+
                     }).build());
 
 

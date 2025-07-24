@@ -35,5 +35,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CRUSHED_EMERALD_BLOCK.get())
                 .add(ModBlocks.STEEL_ORE.get())
                 .add(ModBlocks.CRUSHED_AMETHYST_BLOCK.get());
+
+        tag(BlockTags.FENCES)
+                .add(ModBlocks.STEEL_FENCE.get());
+
+        tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.STEEL_FENCE_GATE.get());
+
+        tag(BlockTags.WALLS)
+                .add(ModBlocks.STEEL_WALL.get());
     }
 }

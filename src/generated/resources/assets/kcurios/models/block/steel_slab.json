@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "kcurios:block/steel_block",
+    "side": "kcurios:block/steel_block",
+    "top": "kcurios:block/steel_block"
+  }
+}

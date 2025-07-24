@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "steel",
+  "ingredients": [
+    {
+      "item": "kcurios:steel_ingot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "kcurios:steel_button"
+  }
+}

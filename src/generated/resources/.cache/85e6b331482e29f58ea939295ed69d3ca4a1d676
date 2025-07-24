@@ -1,0 +1,7 @@
+// 1.21	2025-07-24T19:08:26.6334016	Tags for minecraft:block mod id kcurios
+d47669ebb00a8bbcbaea1b9d5c0d4360bd602e63 data/minecraft/tags/block/fences.json
+b5e38e629cc5f3c351ed1d9ca1db8aeaf1619151 data/minecraft/tags/block/fence_gates.json
+e011f3d73c0984eee8754b823072f3056977a578 data/minecraft/tags/block/mineable/pickaxe.json
+87d65b4bea7b1d475506128b2b813f77876e2c5f data/minecraft/tags/block/needs_iron_tool.json
+2fc17c23108b40608f1a64372da1d9e28aea15e3 data/minecraft/tags/block/needs_stone_tool.json
+d0c4d19b61d59bb662ee1d6502cee328b82afd3e data/minecraft/tags/block/walls.json

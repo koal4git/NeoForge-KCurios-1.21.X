@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "kcurios:block/steel_slab"
+    },
+    "type=double": {
+      "model": "kcurios:block/steel_block"
+    },
+    "type=top": {
+      "model": "kcurios:block/steel_slab_top"
+    }
+  }
+}

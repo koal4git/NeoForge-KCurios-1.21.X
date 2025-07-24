@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "kcurios:steel_ingot"
+    }
+  },
+  "pattern": [
+    "   ",
+    " S ",
+    " # "
+  ],
+  "result": {
+    "count": 1,
+    "id": "kcurios:chisel"
+  }
+}
