@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:golden_apple"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "pattern": [
+    "GG ",
+    "GA ",
+    "  G"
+  ],
+  "result": {
+    "count": 1,
+    "id": "kcurios:golden_lasso"
+  }
+}

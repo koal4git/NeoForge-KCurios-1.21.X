@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "kcurios:amethyst_ingot"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "AIA",
+    " I "
+  ],
+  "result": {
+    "count": 1,
+    "id": "kcurios:amethyst_hammer"
+  }
+}

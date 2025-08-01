@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:redstone"
+    },
+    "L": {
+      "item": "kcurios:crushed_amethyst"
+    }
+  },
+  "pattern": [
+    "LBL",
+    "BLB",
+    "LBL"
+  ],
+  "result": {
+    "count": 4,
+    "id": "kcurios:amethyst_lamp"
+  }
+}
