@@ -2,12 +2,17 @@ package net.koala.kcurios.datagen;
 
 import net.koala.kcurios.Kcurios;
 import net.koala.kcurios.block.ModBlocks;
+import net.koala.kcurios.block.custom.AmethystLampBlock;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
+
+import java.util.Map;
 
 public class ModBlockStateProvider extends BlockStateProvider {
 
@@ -50,13 +55,25 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.STEEL_FENCE_GATE);
         blockItem(ModBlocks.STEEL_TRAPDOOR, "_bottom");
 
-
+        customLamp();
 
     }
 
 
+    private void customLamp() {
+        getVariantBuilder(ModBlocks.AMETHYST_LAMP.get()).forAllStates(state -> {
+            if(state.getValue(AmethystLampBlock.CLICKED)) {
+                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("amethyst_lamp_on",
+                        ResourceLocation.fromNamespaceAndPath(Kcurios.MOD_ID, "block/" + "amethyst_lamp_on")))};
+            } else {
+                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("amethyst_lamp_off",
+                        ResourceLocation.fromNamespaceAndPath(Kcurios.MOD_ID, "block/" + "amethyst_lamp_off")))};
+            }
+        });
 
-
+        simpleBlockItem(ModBlocks.AMETHYST_LAMP.get(), models().cubeAll("amethyst_lamp_off",
+                ResourceLocation.fromNamespaceAndPath(Kcurios.MOD_ID, "block/" + "amethyst_lamp_off")));
+    }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {
         simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));

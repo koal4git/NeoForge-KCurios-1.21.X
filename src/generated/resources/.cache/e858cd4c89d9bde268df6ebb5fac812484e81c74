@@ -1,2 +1,7 @@
-// 1.21	2025-07-24T16:36:46.5950053	Tags for minecraft:item mod id kcurios
+// 1.21	2025-07-25T15:02:56.2026182	Tags for minecraft:item mod id kcurios
 c4cec1b7a8f2baf57abf031acd6311dd8a7bb5d1 data/kcurios/tags/item/transformable_items.json
+04aa6a609fe57397acc8da52be4e809258a4536f data/minecraft/tags/item/axes.json
+46180ef86e8d35f931046bfa330f54563082d38e data/minecraft/tags/item/hoes.json
+3f878cce4de0c6e9ae037ee624fb41b6ca0508b8 data/minecraft/tags/item/pickaxes.json
+ad679fb215b942571fc67a6e06502a1f4cd18c21 data/minecraft/tags/item/shovels.json
+a5e0722e05909c26640db8ea48d30835752bfafc data/minecraft/tags/item/swords.json

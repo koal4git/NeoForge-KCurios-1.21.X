@@ -6,6 +6,8 @@ import net.koala.kcurios.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -25,5 +27,17 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ModTags.Items.TRANSFORMABLE_ITEMS)
                 .add(ModItems.CRUSHED_AMETHYST.get())
                 .add(Items.IRON_INGOT);
+
+
+        tag(ItemTags.SWORDS)
+                .add(ModItems.EMERALD_SWORD.get());
+        tag(ItemTags.PICKAXES)
+                .add(ModItems.EMERALD_PICKAXE.get());
+        tag(ItemTags.AXES)
+                .add(ModItems.EMERALD_AXE.get());
+        tag(ItemTags.SHOVELS)
+                .add(ModItems.EMERALD_SHOVEL.get());
+        tag(ItemTags.HOES)
+                .add(ModItems.EMERALD_HOE.get());
     }
 }

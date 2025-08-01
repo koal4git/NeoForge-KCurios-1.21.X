@@ -1,6 +1,7 @@
 package net.koala.kcurios.item.custom;
 
 import net.koala.kcurios.block.ModBlocks;
+import net.koala.kcurios.component.ModDataComponents;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.network.chat.Component;
@@ -49,6 +50,10 @@ public class Chiseltem extends Item {
                     item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                 level.playSound(null, context.getClickedPos(), SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS);
+
+
+                context.getItemInHand().set(ModDataComponents.COORDINATES, context.getClickedPos());
+
             }
         }
 
@@ -65,6 +70,14 @@ public class Chiseltem extends Item {
             tooltipComponents.add(Component.translatable("tooltip.kcurios.chisel.tooltip"));
 
         }
+
+        if (stack.get(ModDataComponents.COORDINATES) != null) {
+           tooltipComponents.add(Component.literal("Last Block Changed at " + stack.get(ModDataComponents.COORDINATES)));
+        }
+
+
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+
+
     }
 }

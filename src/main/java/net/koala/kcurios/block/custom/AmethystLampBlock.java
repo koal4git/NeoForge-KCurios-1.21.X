@@ -16,6 +16,7 @@ public class AmethystLampBlock extends Block {
 
     public AmethystLampBlock(Properties properties) {
         super(properties);
+        this.registerDefaultState(this.defaultBlockState().setValue(CLICKED, false));
     }
 
     @Override
@@ -34,4 +35,6 @@ public class AmethystLampBlock extends Block {
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(CLICKED);
     }
+
+
 }

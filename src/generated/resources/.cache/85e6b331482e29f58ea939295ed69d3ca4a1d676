@@ -1,4 +1,9 @@
-// 1.21	2025-07-24T19:08:26.6334016	Tags for minecraft:block mod id kcurios
+// 1.21	2025-07-27T20:32:17.0507894	Tags for minecraft:block mod id kcurios
+263c3f73d25170aee599a41907a4b74a70e766a1 data/kcurios/tags/block/incorrect_for_amethyst_tool.json
+e7a4a1c3de6c68d3ebe825301852e6a3f136bfea data/kcurios/tags/block/incorrect_for_emerald_tool.json
+82362cfbd1836db13c7e9d36c8712821e795ac55 data/kcurios/tags/block/mineable_with_hammer.json
+32b13946c4cd1f944b029659ccce5fcb2adad4ff data/kcurios/tags/block/needs_amethyst_tool.json
+a249c46329a41538f49a564e1f14338aaf1be5a0 data/kcurios/tags/block/needs_emerald_tool.json
 d47669ebb00a8bbcbaea1b9d5c0d4360bd602e63 data/minecraft/tags/block/fences.json
 b5e38e629cc5f3c351ed1d9ca1db8aeaf1619151 data/minecraft/tags/block/fence_gates.json
 e011f3d73c0984eee8754b823072f3056977a578 data/minecraft/tags/block/mineable/pickaxe.json

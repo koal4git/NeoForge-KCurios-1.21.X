@@ -8,11 +8,27 @@
   "item.kcurios.crushed_amethyst": "Crushed Amethyst",
   "item.kcurios.raw_steel": "Raw Steel",
   "item.kcurios.steel_ingot": "Steel Ingot",
-  "item.kcurios.emerald_ingot": "Emerald Ingot",
 
+
+  "item.kcurios.emerald_ingot": "Emerald Ingot",
+  "item.kcurios.emerald_pickaxe": "Emerald Pickaxe",
+  "item.kcurios.emerald_sword": "Emerald Sword",
+  "item.kcurios.emerald_axe": "Emerald Battle Axe",
+  "item.kcurios.emerald_shovel": "Emerald Shovel",
+  "item.kcurios.emerald_hoe": "Emerald Hoe",
+
+  "item.kcurios.amethyst_ingot": "Amethyst Ingot",
+  "item.kcurios.amethyst_hammer": "Amethyst Hammer",
 
   "item.kcurios.chisel": "Chisel",
-  
+  "item.kcurios.golden_lasso": "Gold Lasso",
+
+
+  "item.kcurios.emerald_helmet": "Emerald Helmet",
+  "item.kcurios.emerald_chestplate": "Emerald Chestplate",
+  "item.kcurios.emerald_leggings": "Emerald Leggings",
+  "item.kcurios.emerald_boots": "Emerald Bootys",
+
   
   "item.kcurios.bell_pepper": "Bell Pepper",
   "item.kcurios.dry_ice": "Dry Ice",
@@ -38,6 +54,10 @@
   "block.kcurios.steel_wall": "Steel Wall",
   "block.kcurios.steel_door": "Steel Door",
   "block.kcurios.steel_trapdoor": "Steel Trapdoor",
+
+
+
+  "block.kcurios.amethyst_lamp": "Amethyst Lamp",
 
 
   "tooltip.kcurios.shift_down": "Hold Shift For More Info",

@@ -1,6 +1,7 @@
 package net.koala.kcurios;
 
 import net.koala.kcurios.block.ModBlocks;
+import net.koala.kcurios.component.ModDataComponents;
 import net.koala.kcurios.item.ModCreativeModeTabs;
 import net.koala.kcurios.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -21,6 +22,8 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
+
+
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(Kcurios.MOD_ID)
 public class Kcurios {
@@ -36,6 +39,8 @@ public class Kcurios {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+
+
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
@@ -45,6 +50,8 @@ public class Kcurios {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModDataComponents.register(modEventBus);
+
 
 
         // Register the item to a creative tab
@@ -82,5 +89,6 @@ public class Kcurios {
         static void onClientSetup(FMLClientSetupEvent event) {
 
         }
+
     }
 }

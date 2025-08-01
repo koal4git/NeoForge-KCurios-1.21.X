@@ -25,6 +25,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.kcurios.kcurios_items"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.CRUSHED_AMETHYST);
+                        output.accept(ModItems.AMETHYST_INGOT);
                         output.accept(ModItems.CRUSHED_EMERALDS);
                         output.accept(ModItems.EMERALD_INGOT);
                         output.accept(ModItems.RAW_STEEL);
@@ -32,9 +33,28 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CHISEL);
 
 
+                        //emerald tools and that
+                        output.accept(ModItems.EMERALD_PICKAXE);
+                        output.accept(ModItems.EMERALD_SWORD);
+                        output.accept(ModItems.EMERALD_AXE);
+                        output.accept(ModItems.EMERALD_SHOVEL);
+                        output.accept(ModItems.EMERALD_HOE);
+
+                        output.accept(ModItems.EMERALD_HELMET);
+                        output.accept(ModItems.EMERALD_CHESTPLATE);
+                        output.accept(ModItems.EMERALD_LEGGINGS);
+                        output.accept(ModItems.EMERALD_BOOTS);
+
+                        output.accept(ModItems.AMETHYST_HAMMER);
+
+
                         output.accept(ModItems.BELL_PEPPER);
                         output.accept(ModItems.DRY_ICE);
                         output.accept(ModItems.FLOUR);
+
+
+
+                        output.accept(ModItems.GOLDEN_LASSO);
                     }).build());
 
 

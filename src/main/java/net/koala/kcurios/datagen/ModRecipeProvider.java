@@ -71,6 +71,33 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('L', Items.LAVA_BUCKET)
                 .unlockedBy("has_crushed_emeralds", has(ModItems.CRUSHED_EMERALDS)).save(recipeOutput);
 
+        //amethyst lamp
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.AMETHYST_LAMP.get(), 4)
+                .pattern("LBL")
+                .pattern("BLB")
+                .pattern("LBL")
+                .define('B', Items.REDSTONE)
+                .define('L', ModItems.CRUSHED_AMETHYST.get())
+                .unlockedBy("has_crushed_amethyst", has(ModItems.CRUSHED_AMETHYST)).save(recipeOutput);
+
+        //amethyst hammer
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.AMETHYST_HAMMER.get())
+                .pattern("AAA")
+                .pattern("AIA")
+                .pattern(" I ")
+                .define('A', ModItems.AMETHYST_INGOT.get())
+                .define('I', Items.IRON_INGOT)
+                .unlockedBy("has_amethyst_ingot", has(ModItems.AMETHYST_INGOT)).save(recipeOutput);
+
+        //golden lasso
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOLDEN_LASSO.get())
+                .pattern("GG ")
+                .pattern("GA ")
+                .pattern("  G")
+                .define('G', Items.GOLD_INGOT)
+                .define('A', Items.GOLDEN_APPLE)
+                .unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT)).save(recipeOutput);
+
         //emerald ingot
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.EMERALD_INGOT.get(), 1)
                 .requires(ModItems.CRUSHED_EMERALDS, 2)
@@ -91,6 +118,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CRUSHED_AMETHYST.get(), 9)
                 .requires(ModBlocks.CRUSHED_AMETHYST_BLOCK)
                 .unlockedBy("has_steel_block", has(ModBlocks.CRUSHED_AMETHYST_BLOCK)).save(recipeOutput);
+
+        //amethyst ingot
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.AMETHYST_INGOT.get(), 1)
+                .requires(ModItems.CRUSHED_AMETHYST, 2)
+                .unlockedBy("has_crushed_amethyst", has(ModItems.CRUSHED_AMETHYST)).save(recipeOutput);
 
 
         stairBuilder(ModBlocks.STEEL_STAIRS.get(), Ingredient.of(ModItems.STEEL_INGOT)).group("steel")

@@ -2,6 +2,7 @@ package net.koala.kcurios.datagen;
 
 import net.koala.kcurios.Kcurios;
 import net.koala.kcurios.block.ModBlocks;
+import net.koala.kcurios.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -36,13 +37,27 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STEEL_ORE.get())
                 .add(ModBlocks.CRUSHED_AMETHYST_BLOCK.get());
 
-        tag(BlockTags.FENCES)
-                .add(ModBlocks.STEEL_FENCE.get());
+        tag(BlockTags.FENCES).add(ModBlocks.STEEL_FENCE.get());
+        tag(BlockTags.FENCE_GATES).add(ModBlocks.STEEL_FENCE_GATE.get());
+        tag(BlockTags.WALLS).add(ModBlocks.STEEL_WALL.get());
 
-        tag(BlockTags.FENCE_GATES)
-                .add(ModBlocks.STEEL_FENCE_GATE.get());
+        tag(ModTags.Blocks.NEEDS_EMERALD_TOOL)
+                .addTag(BlockTags.NEEDS_DIAMOND_TOOL); // every block diamond can mine emerald can
 
-        tag(BlockTags.WALLS)
-                .add(ModBlocks.STEEL_WALL.get());
+        tag(ModTags.Blocks.INCORRECT_FOR_EMERALD_TOOL)
+                .addTag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL) // if added to here
+                .remove(ModTags.Blocks.NEEDS_EMERALD_TOOL); // it removes it from here? kinda confusing
+
+        tag(ModTags.Blocks.NEEDS_AMETHYST_TOOL)
+                .addTag(BlockTags.NEEDS_IRON_TOOL);
+
+        tag(ModTags.Blocks.INCORRECT_FOR_AMETHYST_TOOL)
+                .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
+                .remove(ModTags.Blocks.NEEDS_AMETHYST_TOOL);
+
+        tag(ModTags.Blocks.MINEABLE_WITH_HAMMER)
+                .addTag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .addTag(BlockTags.MINEABLE_WITH_AXE)
+                .addTag(BlockTags.MINEABLE_WITH_SHOVEL);
     }
 }
