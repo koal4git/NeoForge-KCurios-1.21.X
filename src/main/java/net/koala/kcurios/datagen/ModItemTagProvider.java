@@ -39,5 +39,13 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.EMERALD_SHOVEL.get());
         tag(ItemTags.HOES)
                 .add(ModItems.EMERALD_HOE.get());
+
+
+
+        this.tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.EMERALD_HELMET.get())
+                .add(ModItems.EMERALD_CHESTPLATE.get())
+                .add(ModItems.EMERALD_LEGGINGS.get())
+                .add(ModItems.EMERALD_BOOTS.get());
     }
 }
