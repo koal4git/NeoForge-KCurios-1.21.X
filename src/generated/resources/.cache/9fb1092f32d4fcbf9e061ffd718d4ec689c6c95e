@@ -1,7 +1,11 @@
-// 1.21	2025-07-31T14:32:37.3969398	Recipes
+// 1.21	2025-08-01T23:35:00.0767637	Recipes
 b8fd727bddfdb210944e7940731bec35abb439c0 data/kcurios/advancement/recipes/building_blocks/steel_slab.json
 72f9d85071b9bc55aa1ff5113ea303c95794fa2b data/kcurios/advancement/recipes/building_blocks/steel_stairs.json
 7286c9298f3f324513a8ae0a13c6f3ee926bc9bf data/kcurios/advancement/recipes/building_blocks/steel_wall.json
+87207e3cb81d03ab7e97d64877daafcac2de5875 data/kcurios/advancement/recipes/combat/emerald_boots.json
+99a4fcc467d91cbe57ce4ed8d0cf5430936d3c4f data/kcurios/advancement/recipes/combat/emerald_chestplate.json
+bddf68dd2496cba7e678394f1807ea29d626d9fc data/kcurios/advancement/recipes/combat/emerald_helmet.json
+622bfda52af3d336515f7d133ba77a03706e364d data/kcurios/advancement/recipes/combat/emerald_leggings.json
 aab3367668213c5f6c95fa99095d403c2decec76 data/kcurios/advancement/recipes/decorations/steel_fence.json
 a5c97925451878109f059bac5d181f491075dfe3 data/kcurios/advancement/recipes/decorations/steel_fence_gate.json
 0b869a6cec1df64b5c3579b3e1b8b5b2aa5ebc4d data/kcurios/advancement/recipes/misc/amethyst_ingot.json
@@ -35,7 +39,11 @@ cad6f900b200de232f539020c9f964afc8b5c703 data/kcurios/recipe/amethyst_hammer.jso
 2306355a1741bd13f0730c38a8c74aa922956377 data/kcurios/recipe/crushed_amethyst_block.json
 b18917c17493884b968622bd1751e561ae7b59b5 data/kcurios/recipe/crushed_emeralds_haha.json
 ee9bea488886c58a5eec39509d84ff11932644cb data/kcurios/recipe/crushed_emerald_block.json
+6877462fb2c2b53d079cb1ae2298923fba6f1bc8 data/kcurios/recipe/emerald_boots.json
+9a28b7bdbe661f8a2b415a2c3592ed9aa1dd2423 data/kcurios/recipe/emerald_chestplate.json
+f1b589c65f53968d91d2799c22853fb73b806e98 data/kcurios/recipe/emerald_helmet.json
 907c9ef22a4755ad7a57fe2b4e28dffe8e8f3f2c data/kcurios/recipe/emerald_ingot.json
+e96ae8ff980c97dd7985fb7513c2e6fe7597747a data/kcurios/recipe/emerald_leggings.json
 5c705b52a8b6704f569468d468362ebec357241a data/kcurios/recipe/golden_lasso.json
 61ac603883a364f73de023efeef80f0bfeb14400 data/kcurios/recipe/magic_block.json
 3165b1bd5768a507083e3043b77018993a832d60 data/kcurios/recipe/steel_block.json

@@ -1,8 +1,9 @@
-// 1.21	2025-08-01T19:39:27.4641773	Item Models: kcurios
+// 1.21	2025-08-01T23:28:44.7438076	Item Models: kcurios
 812892f3f771e20f325cb4c61ee8b09aa92f533c assets/kcurios/models/item/amethyst_hammer.json
 7780eb7b780a08a54fdbee66c5a7d88f3aec0a1f assets/kcurios/models/item/amethyst_ingot.json
 4989ab6c7cd11a7d404115da5dcaf365cb461fb0 assets/kcurios/models/item/bell_pepper.json
-33c2b5ecea36d3cbdce5e37b075ab4dc8bf155fc assets/kcurios/models/item/chisel.json
+3410d7979b8def1bea61b6366612c36a4b82adfc assets/kcurios/models/item/chisel.json
+afc3345961b0090790d3794488e6c25d6b798fcf assets/kcurios/models/item/chisel_used.json
 7b6b6018e08857630ca179e9a09689fb1b438c86 assets/kcurios/models/item/crushed_amethyst.json
 01a052bd3f84bd934fab0967fdf527655475a8ca assets/kcurios/models/item/crushed_emeralds.json
 0e605d54017bc8a6f81fc5185a8c993b4e3e4cee assets/kcurios/models/item/dry_ice.json

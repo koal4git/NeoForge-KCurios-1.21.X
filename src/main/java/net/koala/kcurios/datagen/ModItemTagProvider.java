@@ -47,5 +47,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.EMERALD_CHESTPLATE.get())
                 .add(ModItems.EMERALD_LEGGINGS.get())
                 .add(ModItems.EMERALD_BOOTS.get());
+        this.tag(ItemTags.ARMOR_ENCHANTABLE)
+                .add(ModItems.EMERALD_HELMET.get())
+                .add(ModItems.EMERALD_CHESTPLATE.get())
+                .add(ModItems.EMERALD_LEGGINGS.get())
+                .add(ModItems.EMERALD_BOOTS.get());
+
     }
 }

@@ -16,14 +16,8 @@ public class ModDataComponents {
             DeferredRegister.createDataComponents(Kcurios.MOD_ID);
 
 
-    public static final DeferredHolder<DataComponentType<?>, DataComponentType<BlockPos>> COORDINATES = register("coordinates",
-            builder -> builder.persistent(BlockPos.CODEC));
-
-    public static final DeferredHolder<DataComponentType<?>, DataComponentType<CompoundTag>> CAPTURED_ENTITY = register(
-            "captured_entity",
-            builder -> builder.persistent(CompoundTag.CODEC)
-    );
-
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<BlockPos>> COORDINATES =
+            register("coordinates", builder -> builder.persistent(BlockPos.CODEC));
 
 
     private static <T> DeferredHolder<DataComponentType<?>, DataComponentType<T>> register(String name,

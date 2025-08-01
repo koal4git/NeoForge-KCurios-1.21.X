@@ -103,6 +103,40 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModItems.CRUSHED_EMERALDS, 2)
                 .unlockedBy("has_crushed_emeralds", has(ModItems.CRUSHED_EMERALDS)).save(recipeOutput);
 
+        //EMERALD HELEMT
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.EMERALD_HELMET.get(), 1)
+                .pattern("EEE")
+                .pattern("E E")
+                .pattern("   ")
+                .define('E', ModItems.EMERALD_INGOT.get())
+                .unlockedBy("has_emerald_ingot", has(ModItems.EMERALD_INGOT)).save(recipeOutput);
+
+        //EMERALD CHESTPLATE
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.EMERALD_CHESTPLATE.get(), 1)
+                .pattern("E E")
+                .pattern("EEE")
+                .pattern("EEE")
+                .define('E', ModItems.EMERALD_INGOT.get())
+                .unlockedBy("has_emerald_ingot", has(ModItems.EMERALD_INGOT)).save(recipeOutput);
+
+        //EMERALD LEGGINGS
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.EMERALD_LEGGINGS.get(), 1)
+                .pattern("EEE")
+                .pattern("E E")
+                .pattern("E E")
+                .define('E', ModItems.EMERALD_INGOT.get())
+                .unlockedBy("has_emerald_ingot", has(ModItems.EMERALD_INGOT)).save(recipeOutput);
+
+
+        //EMERALD BOOTYS
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.EMERALD_BOOTS.get(), 1)
+                .pattern("   ")
+                .pattern("E E")
+                .pattern("E E")
+                .define('E', ModItems.EMERALD_INGOT.get())
+                .unlockedBy("has_emerald_ingot", has(ModItems.EMERALD_INGOT)).save(recipeOutput);
+
+
         //steel ingot
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.STEEL_INGOT.get(), 9)
                 .requires(ModBlocks.STEEL_BLOCK)
