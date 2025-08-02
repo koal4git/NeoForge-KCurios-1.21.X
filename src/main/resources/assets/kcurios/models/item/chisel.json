@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "kcurios:item/chisel"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "kcurios:used": 1
+      },
+      "model": "kcurios:item/chisel_used"
+    }
+  ]
+}

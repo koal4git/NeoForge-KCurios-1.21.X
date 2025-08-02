@@ -134,10 +134,11 @@ public class LassoItem extends Item {
                 UUID oldUuid = entity.getUUID();
                 entity.load(entityData);
                 entity.setUUID(oldUuid);
+
                 
-                double x = player.getX() + player.getLookAngle().x * 1.5;
-                double y = player.getY() + player.getEyeHeight();
-                double z = player.getZ() + player.getLookAngle().z * 1.5;
+                double x = player.getX() + player.getLookAngle().x * 2;
+                double y = player.getY() + player.getEyeHeight() - 1;
+                double z = player.getZ() + player.getLookAngle().z * 2;
                 entity.setPos(x, y, z);
                 entity.setYRot(player.getYRot());
                 

@@ -79,7 +79,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.FLOUR.get());
 
         //TOOLS
-        chiselItem(ModItems.CHISEL);
 
         handheldItem(ModItems.EMERALD_PICKAXE);
         handheldItem(ModItems.EMERALD_SWORD);
@@ -106,21 +105,6 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
 
-    //credit to membody26
-    private void chiselItem(DeferredItem<Item> item) {
-
-        // Chisel Item
-        this.withExistingParent(item.getId().getPath(), mcLoc("item/generated"))
-                .texture("layer0", ResourceLocation.fromNamespaceAndPath(Kcurios.MOD_ID, "item/chisel"))
-                .override()
-                .model(new ModelFile.UncheckedModelFile(modLoc("item/chisel_used")))
-                .predicate(modLoc("used"), 1)
-                .end();
-
-        // Chisel Used
-        this.withExistingParent("chisel_used", mcLoc("item/generated"))
-                .texture("layer0", ResourceLocation.fromNamespaceAndPath(Kcurios.MOD_ID, "item/chisel_used"));
-    }
 
     // Credit to El_Redstoniano for making this and kaupenjoe for tweaking for 1.21
     private void trimmedArmorItem(DeferredItem<ArmorItem> itemDeferredItem) {
