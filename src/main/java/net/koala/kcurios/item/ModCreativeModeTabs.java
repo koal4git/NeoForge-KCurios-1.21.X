@@ -52,6 +52,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DRY_ICE);
                         output.accept(ModItems.FLOUR);
 
+                        output.accept(ModItems.PISTOL);
+
 
 
                         output.accept(ModItems.GOLDEN_LASSO);

@@ -86,7 +86,7 @@ public class Kcurios {
     static class ClientModEvents {
         @SubscribeEvent
         static void onClientSetup(FMLClientSetupEvent event) {
-
+            ModItemProperties.addCustomItemProperties();
         }
 
     }

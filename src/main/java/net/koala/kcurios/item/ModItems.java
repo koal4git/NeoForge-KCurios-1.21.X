@@ -96,6 +96,10 @@ public class ModItems {
             () -> new ModArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(19))));
 
+    public static final DeferredItem<Item> PISTOL = ITEMS.register("pistol",
+            () -> new BowItem(new Item.Properties().durability(500)));
+
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
