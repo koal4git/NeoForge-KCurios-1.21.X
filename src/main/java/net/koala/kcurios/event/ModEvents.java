@@ -1,6 +1,7 @@
 package net.koala.kcurios.event;
 
 import net.koala.kcurios.Kcurios;
+import net.koala.kcurios.item.ModItems;
 import net.koala.kcurios.item.custom.HammerItem;
 import net.koala.kcurios.item.custom.LassoItem;
 import net.minecraft.ChatFormatting;
@@ -9,13 +10,17 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 
@@ -25,6 +30,18 @@ import java.util.Set;
 
 @EventBusSubscriber(modid = Kcurios.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
 public class ModEvents {
+
+    //when youre in the actual game actual features yknow
+    //cleint is rendering
+    //server is anything that cant be done on the client, be healed spawn something would need a hack client yknow
+
+    //gameclient (game bus, forge bus, main bus only on the logical client) ONLY EXTENDS EVENT
+    //gameserver
+
+    //for like registering and stuff
+    //modlcient IMPLEMENTS IMODBUSEVENT
+    //modserver
+
 
     private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
 
@@ -151,4 +168,23 @@ public class ModEvents {
             1.0f
         );
     }
+
+    @SubscribeEvent
+    public static void livingDamage(LivingDamageEvent.Pre event) {
+
+        if(event.getEntity() instanceof Villager villager && event.getSource().getDirectEntity() instanceof Player player) {
+            if(player.getMainHandItem().getItem() == ModItems.CHISEL.get()) {
+                player.sendSystemMessage(Component.translatable("easteregg.chisel.villager"));
+                player.addEffect(new MobEffectInstance(MobEffects.GLOWING, 100, 0));
+                villager.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 1));
+                player.getMainHandItem().shrink(1);
+            }
+
+        }
+    }
+
+
+
+
+
 }

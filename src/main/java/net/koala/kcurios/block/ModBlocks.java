@@ -4,6 +4,7 @@ import net.koala.kcurios.Kcurios;
 import net.koala.kcurios.block.custom.AmethystLampBlock;
 import net.koala.kcurios.block.custom.MagicBlock;
 import net.koala.kcurios.item.ModItems;
+import net.koala.kcurios.sound.ModSounds;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -43,7 +44,7 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> MAGIC_BLOCK = registerBlock("magic_block",
             () -> new MagicBlock(BlockBehaviour.Properties.of()
-                    .strength(3f).sound(SoundType.SPONGE)));
+                    .strength(3f).sound(ModSounds.MAGIC_BLOCK_SOUNDS)));
 
     //non block blocks
     public static final DeferredBlock<StairBlock> STEEL_STAIRS = registerBlock("steel_stairs",

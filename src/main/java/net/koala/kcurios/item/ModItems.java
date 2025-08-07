@@ -97,8 +97,10 @@ public class ModItems {
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(19))));
 
     public static final DeferredItem<Item> PISTOL = ITEMS.register("pistol",
-            () -> new BowItem(new Item.Properties().durability(500)));
+            () -> new BasicGunItem(new Item.Properties().durability(500)));
 
+    public static final DeferredItem<ArrowItem> BULLET = ITEMS.register("bullet",
+            () -> new ArrowItem(new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {

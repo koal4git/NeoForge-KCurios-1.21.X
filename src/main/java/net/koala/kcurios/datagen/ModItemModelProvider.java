@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.armortrim.TrimMaterials;
 import net.minecraft.world.level.block.Block;
@@ -95,6 +96,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
 
         basicItem(ModItems.GOLDEN_LASSO.get());
+
+        bowItem(ModItems.PISTOL);
+        basicItem(ModItems.BULLET.get());
     }
 
 
@@ -105,6 +109,73 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     }
 
+
+    private void bowItem(DeferredItem<Item> item) {
+
+        // Bow Item
+        this.withExistingParent(item.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", ResourceLocation.fromNamespaceAndPath(Kcurios.MOD_ID, "item/" + item.getId().getPath()))
+
+                //transforms by luisscalabrin579 on YT
+                .transforms()
+                .transform(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND)
+                .rotation(-40, 260, -40) // was -80
+                .translation(-1, -2, 2.5f)
+                .scale(0.9f)
+                .end()
+
+                .transform(ItemDisplayContext.THIRD_PERSON_LEFT_HAND)
+                .rotation(-40, -280, 40) // was -80
+                .translation(-1, -2, 2.5f)
+                .scale(0.9f)
+                .end()
+
+                .transform(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND)
+                .rotation(35, -90, 15) // was 0
+                .translation(1.13f, 3.2f, 1.13f)
+                .scale(0.68f)
+                .end()
+
+                .transform(ItemDisplayContext.FIRST_PERSON_LEFT_HAND)
+                .rotation(35, 90, -15) // was 0
+                .translation(1.13f, 3.2f, 1.13f)
+                .scale(0.68f)
+                .end()
+                .end()
+
+
+
+                .override()
+                .predicate(mcLoc("pulling"), 1f)
+                .model(new ModelFile.UncheckedModelFile(modLoc("item/" + item.getId().getPath() + "_pulling_0")))
+                .end()
+
+
+                .override()
+                .predicate(mcLoc("pulling"), 1f)
+                .predicate(mcLoc("pull"), 0.65f)
+                .model(new ModelFile.UncheckedModelFile(modLoc("item/" + item.getId().getPath() + "_pulling_1")))
+                .end()
+
+                .override()
+                .predicate(mcLoc("pulling"), 1f)
+                .predicate(mcLoc("pull"), 0.9f)
+                .model(new ModelFile.UncheckedModelFile(modLoc("item/" + item.getId().getPath() + "_pulling_2")))
+                .end();
+
+
+        // bow pulling 0
+        this.withExistingParent(item.getId().getPath() + "_pulling_0", modLoc("item/" + item.getId().getPath()))
+                .texture("layer0", ResourceLocation.fromNamespaceAndPath(Kcurios.MOD_ID, "item/" + item.getId().getPath() + "_pulling_0"));
+
+        // bow pulling 1
+        this.withExistingParent(item.getId().getPath() + "_pulling_1", modLoc("item/" + item.getId().getPath()))
+                .texture("layer0", ResourceLocation.fromNamespaceAndPath(Kcurios.MOD_ID, "item/" + item.getId().getPath() + "_pulling_1"));
+
+        // bow pulling 2
+        this.withExistingParent(item.getId().getPath() + "_pulling_2", modLoc("item/" + item.getId().getPath()))
+                .texture("layer0", ResourceLocation.fromNamespaceAndPath(Kcurios.MOD_ID, "item/" + item.getId().getPath() + "_pulling_2"));
+    }
 
     private void chiselItem(DeferredItem<Item> item) {
 

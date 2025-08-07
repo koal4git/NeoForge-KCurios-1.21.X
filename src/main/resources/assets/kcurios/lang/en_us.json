@@ -22,7 +22,8 @@
 
   "item.kcurios.chisel": "Chisel",
   "item.kcurios.golden_lasso": "Gold Lasso",
-  "item.kcurios.pistol": "Pistol",
+  "item.kcurios.pistol": " Basic Pistol",
+  "item.kcurios.bullet": "Basic Bullet",
 
 
   "item.kcurios.emerald_helmet": "Emerald Helmet",
@@ -66,7 +67,16 @@
   "tooltip.kcurios.chisel.tooltip": "This Tool lets you Chisel Blocks into Their Respective Blocks",
   "tooltip.kcurios.flour.tooltip": "This is a fuel source... careful it doesnt explode",
 
+  "sounds.kcurios.gunshot": "Gun Being Shot",
+  "sounds.kcurios.magic_block_break": "Magic Block Breaking",
+  "sounds.kcurios.magic_block_fall": "Fell on Magic Block",
+  "sounds.kcurios.magic_block_hit": "Hit Magic Block",  
+  "sounds.kcurios.magic_block_place": "Magic Block Placed",
+  "sounds.kcurios.magic_block_step": "Walking on Magic Block",
+
 
   "creativetab.kcurios.kcurios_items": "KCurios Items",
-  "creativetab.kcurios.kcurios_blocks": "KCurios Blocks"
+  "creativetab.kcurios.kcurios_blocks": "KCurios Blocks",
+
+  "easteregg.chisel.villager": "[Villager] HEY MICHAELANGELO WATCH WHERE YOU'RE SWINGING THAT THING"
 }
