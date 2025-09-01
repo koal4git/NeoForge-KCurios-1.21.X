@@ -2,9 +2,11 @@ package net.koala.kcurios;
 
 import net.koala.kcurios.block.ModBlocks;
 import net.koala.kcurios.component.ModDataComponents;
-import net.koala.kcurios.entity.ModEntities;
+import net.koala.kcurios.effect.ModEffects;
+import net.koala.kcurios.enchantment.ModEnchantmentsEffects;
 import net.koala.kcurios.item.ModCreativeModeTabs;
 import net.koala.kcurios.item.ModItems;
+import net.koala.kcurios.potion.ModPotions;
 import net.koala.kcurios.sound.ModSounds;
 import net.koala.kcurios.util.ModItemProperties;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -53,8 +55,14 @@ public class Kcurios {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
         ModSounds.register(modEventBus);
         ModDataComponents.register(modEventBus);
+
+        ModEffects.register(modEventBus);
+        ModPotions.register(modEventBus);
+
+        ModEnchantmentsEffects.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

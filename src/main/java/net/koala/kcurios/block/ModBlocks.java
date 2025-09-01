@@ -83,7 +83,10 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> AMETHYST_LAMP = registerBlock("amethyst_lamp",
             () -> new AmethystLampBlock(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops().lightLevel(state -> state.getValue(AmethystLampBlock.CLICKED) ? 12 : 0).sound(SoundType.AMETHYST)));
+                    .strength(3f).requiresCorrectToolForDrops()
+                    .lightLevel(state -> state.getValue(AmethystLampBlock.CLICKED) ? 12 : 0)
+                    .sound(SoundType.AMETHYST)));
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

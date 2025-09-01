@@ -75,6 +75,13 @@
   "sounds.kcurios.magic_block_step": "Walking on Magic Block",
 
 
+  "enchantment.kcurios.lightning_striker": "Lightning Striker",
+
+  "effect.kcurios.slimey": "Slimey",
+  "item.minecraft.potion.effect.slimey_potion": "Slimey Potion",
+  "item.minecraft.splash_potion.effect.slimey_potion": "Slimey Potion",
+  "item.minecraft.lingering_potion.effect.slimey_potion": "Slimey Potion",
+
   "creativetab.kcurios.kcurios_items": "KCurios Items",
   "creativetab.kcurios.kcurios_blocks": "KCurios Blocks",
 
