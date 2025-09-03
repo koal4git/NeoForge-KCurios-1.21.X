@@ -1,6 +1,7 @@
 {
  "replace": false,
   "values": [
-  "kcurios:lightning_striker"
+   "kcurios:lightning_striker",
+   "kcurios:dash"
   ]
 }

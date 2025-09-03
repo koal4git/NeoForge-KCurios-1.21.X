@@ -1,18 +1,24 @@
 package net.koala.kcurios.event;
 
 import net.koala.kcurios.Kcurios;
+import net.koala.kcurios.enchantment.ModEnchantments;
 import net.koala.kcurios.item.ModItems;
 import net.koala.kcurios.item.custom.HammerItem;
 import net.koala.kcurios.item.custom.LassoItem;
+import net.koala.kcurios.networking.MyData;
 import net.koala.kcurios.potion.ModPotions;
+import net.koala.kcurios.networking.ClientPayloadHandler;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
@@ -21,13 +27,20 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.component.CustomData;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.LivingEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import net.neoforged.neoforge.network.registration.HandlerThread;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -188,6 +201,28 @@ public class ModEvents {
         }
     }
 
+
+    @SubscribeEvent
+    public static void onSprint(LivingEvent event) {
+        if (event.getEntity() instanceof Player player) {
+            ItemStack boots = player.getItemBySlot(EquipmentSlot.FEET);
+
+            Holder<Enchantment> dashHolder = player.level().registryAccess()
+                    .registryOrThrow(Registries.ENCHANTMENT)
+                    .getHolderOrThrow(ModEnchantments.DASH); // ModEnchantments.DASH is ResourceKey
+
+            int enchantmentlevel = EnchantmentHelper.getItemEnchantmentLevel(dashHolder, boots);
+
+            if (enchantmentlevel > 0) {
+                Vec3 look = player.getLookAngle();
+                player.push(look.x * (enchantmentlevel + 0.5), 0.3 * (enchantmentlevel + 0.1), look.z * (enchantmentlevel + 0.5));
+                player.resetFallDistance();
+            }
+
+        }
+
+    }
+
     @SubscribeEvent
     public static void onBrewingRecipeRegister(RegisterBrewingRecipesEvent event) {
 
@@ -196,6 +231,18 @@ public class ModEvents {
         builder.addMix(Potions.AWKWARD, Items.SLIME_BALL, ModPotions.SLIMEY_POTION);
     }
 
+
+    @SubscribeEvent
+    public static void register(final RegisterPayloadHandlersEvent event) {
+        //set the current network vversion
+        final PayloadRegistrar registrar = event.registrar("1")
+                .executesOn(HandlerThread.MAIN);
+
+        registrar.playToServer(
+                MyData.TYPE,
+                MyData.STREAM_CODEC, ClientPayloadHandler::handleDashEnchantmentUsed);
+
+    }
 
 
 }

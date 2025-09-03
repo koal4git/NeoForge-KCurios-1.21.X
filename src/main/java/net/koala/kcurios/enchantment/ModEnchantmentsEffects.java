@@ -2,6 +2,7 @@ package net.koala.kcurios.enchantment;
 
 import com.mojang.serialization.MapCodec;
 import net.koala.kcurios.Kcurios;
+import net.koala.kcurios.enchantment.custom.DashEnchantmentEffect;
 import net.koala.kcurios.enchantment.custom.LightningStrikerEnchantmentEffect;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.enchantment.effects.EnchantmentEntityEffect;
@@ -17,7 +18,12 @@ public class ModEnchantmentsEffects {
     public static final Supplier<MapCodec<? extends EnchantmentEntityEffect>> LIGHTNING_STRIKER =
             ENTITY_ENCHANTMENT_EFFECTS.register("lightning_striker", () -> LightningStrikerEnchantmentEffect.CODEC);
 
+    public static final Supplier<MapCodec<? extends EnchantmentEntityEffect>> DASH =
+            ENTITY_ENCHANTMENT_EFFECTS.register("dash", () -> DashEnchantmentEffect.CODEC);
+
     public static void register(IEventBus eventBus) {
         ENTITY_ENCHANTMENT_EFFECTS.register(eventBus);
+
+
     }
 }

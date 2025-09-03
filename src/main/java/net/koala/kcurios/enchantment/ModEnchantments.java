@@ -1,6 +1,7 @@
 package net.koala.kcurios.enchantment;
 
 import net.koala.kcurios.Kcurios;
+import net.koala.kcurios.enchantment.custom.DashEnchantmentEffect;
 import net.koala.kcurios.enchantment.custom.LightningStrikerEnchantmentEffect;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -12,11 +13,13 @@ import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.EnchantmentTarget;
-
 public class ModEnchantments {
 
     public static final ResourceKey<Enchantment> LIGHTNING_STRIKER = ResourceKey.create(Registries.ENCHANTMENT,
             ResourceLocation.fromNamespaceAndPath(Kcurios.MOD_ID, "lightning_striker"));
+
+    public static final ResourceKey<Enchantment> DASH = ResourceKey.create(Registries.ENCHANTMENT,
+            ResourceLocation.fromNamespaceAndPath(Kcurios.MOD_ID, "dash"));
 
     public static void bootstrap(BootstrapContext<Enchantment> context) {
         var enchantment = context.lookup(Registries. ENCHANTMENT);
@@ -34,6 +37,20 @@ public class ModEnchantments {
                 .exclusiveWith(enchantment.getOrThrow(EnchantmentTags.DAMAGE_EXCLUSIVE))
                 .withEffect(EnchantmentEffectComponents.POST_ATTACK, EnchantmentTarget.ATTACKER,
                         EnchantmentTarget.VICTIM, new LightningStrikerEnchantmentEffect()));
+
+
+        register(context, DASH, Enchantment.enchantment(Enchantment.definition(
+                items.getOrThrow(ItemTags.FOOT_ARMOR_ENCHANTABLE),
+                5,
+                2,
+                Enchantment.dynamicCost(5, 7),
+                Enchantment.dynamicCost(15, 7),
+                2,
+                EquipmentSlotGroup.FEET))
+                .exclusiveWith(enchantment.getOrThrow(EnchantmentTags.BOOTS_EXCLUSIVE))
+                .withEffect(EnchantmentEffectComponents.TICK,
+                        new DashEnchantmentEffect()));
+
     }
 
     private static void register(BootstrapContext<Enchantment> registry, ResourceKey<Enchantment> key, Enchantment.Builder builder) {
