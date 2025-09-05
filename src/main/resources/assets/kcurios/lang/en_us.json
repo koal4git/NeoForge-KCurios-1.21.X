@@ -33,8 +33,16 @@
 
   
   "item.kcurios.bell_pepper": "Bell Pepper",
+  "item.kcurios.bell_pepper_seeds": "Bell Pepper Seeds",
+
+  "item.kcurios.straw_berries": "Straw Berries",
+
   "item.kcurios.dry_ice": "Dry Ice",
   "item.kcurios.flour": "Flour",
+
+  //for other mods like JEI and JADE
+  "block.kcurios.bell_pepper_crop": "Bell Pepper Crop",
+  "block.kcurios.straw_berry_bush": "Straw Berry Bush",
 
 
   "block.kcurios.crushed_emerald_block": "Crushed Emerald Block",
@@ -85,6 +93,10 @@
 
   "creativetab.kcurios.kcurios_items": "KCurios Items",
   "creativetab.kcurios.kcurios_blocks": "KCurios Blocks",
+
+
+  "key.kcurios.category": "Kcurios Keybinds",
+  "key.kcurios.dash": "Dash",
 
   "easteregg.chisel.villager": "[Villager] HEY MICHAELANGELO WATCH WHERE YOU'RE SWINGING THAT THING"
 }

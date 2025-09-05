@@ -74,6 +74,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         //FOOD
         basicItem(ModItems.BELL_PEPPER.get());
+        basicItem(ModItems.BELL_PEPPER_SEEDS.get());
 
         //FUEL
         basicItem(ModItems.DRY_ICE.get());
@@ -99,6 +100,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         bowItem(ModItems.PISTOL);
         basicItem(ModItems.BULLET.get());
+
+        basicItem(ModItems.STRAW_BERRIES.get());
     }
 
 

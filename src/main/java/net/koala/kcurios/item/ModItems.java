@@ -1,6 +1,7 @@
 package net.koala.kcurios.item;
 
 import net.koala.kcurios.Kcurios;
+import net.koala.kcurios.block.ModBlocks;
 import net.koala.kcurios.component.ModDataComponents;
 import net.koala.kcurios.item.custom.*;
 import net.minecraft.network.chat.Component;
@@ -37,6 +38,11 @@ public class ModItems {
 
     public static final DeferredItem<Item> BELL_PEPPER = ITEMS.register("bell_pepper",
             () -> new Item(new Item.Properties().food(ModFoodProperties.BELL_PEPPER)));
+    public static final DeferredItem<Item> BELL_PEPPER_SEEDS = ITEMS.register("bell_pepper_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.BELL_PEPPER_CROP.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> STRAW_BERRIES = ITEMS.register("straw_berries",
+            () -> new ItemNameBlockItem(ModBlocks.STRAW_BERRY_BUSH.get(), new Item.Properties().food(ModFoodProperties.STRAW_BERRY)));
 
     public static final DeferredItem<Item> DRY_ICE = ITEMS.register("dry_ice",
             () -> new FuelItem(new Item.Properties(), 400));

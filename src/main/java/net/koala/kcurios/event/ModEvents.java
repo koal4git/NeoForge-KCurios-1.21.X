@@ -1,5 +1,6 @@
 package net.koala.kcurios.event;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import net.koala.kcurios.Kcurios;
 import net.koala.kcurios.enchantment.ModEnchantments;
 import net.koala.kcurios.item.ModItems;
@@ -9,6 +10,8 @@ import net.koala.kcurios.networking.MyData;
 import net.koala.kcurios.potion.ModPotions;
 import net.koala.kcurios.networking.ClientPayloadHandler;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.KeyMapping;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
@@ -33,20 +36,27 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
+import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.HandlerThread;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
+import org.lwjgl.glfw.GLFW;
 
 import java.util.HashSet;
 import java.util.Set;
 
+import static net.koala.kcurios.event.ModClientEvents.DASH_KEY;
 
-@EventBusSubscriber(modid = Kcurios.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
+
+@EventBusSubscriber(modid = Kcurios.MOD_ID)
 public class ModEvents {
 
     //when youre in the actual game actual features yknow
@@ -201,27 +211,12 @@ public class ModEvents {
         }
     }
 
-
+    /*
     @SubscribeEvent
     public static void onSprint(LivingEvent event) {
-        if (event.getEntity() instanceof Player player) {
-            ItemStack boots = player.getItemBySlot(EquipmentSlot.FEET);
 
-            Holder<Enchantment> dashHolder = player.level().registryAccess()
-                    .registryOrThrow(Registries.ENCHANTMENT)
-                    .getHolderOrThrow(ModEnchantments.DASH); // ModEnchantments.DASH is ResourceKey
 
-            int enchantmentlevel = EnchantmentHelper.getItemEnchantmentLevel(dashHolder, boots);
-
-            if (enchantmentlevel > 0) {
-                Vec3 look = player.getLookAngle();
-                player.push(look.x * (enchantmentlevel + 0.5), 0.3 * (enchantmentlevel + 0.1), look.z * (enchantmentlevel + 0.5));
-                player.resetFallDistance();
-            }
-
-        }
-
-    }
+    } */
 
     @SubscribeEvent
     public static void onBrewingRecipeRegister(RegisterBrewingRecipesEvent event) {
@@ -231,18 +226,12 @@ public class ModEvents {
         builder.addMix(Potions.AWKWARD, Items.SLIME_BALL, ModPotions.SLIMEY_POTION);
     }
 
+    @SubscribeEvent // on the game event bus only on the physical client
+    public static void onClientTick(ClientTickEvent.Post event) {
+        while (DASH_KEY.consumeClick()) {
 
-    @SubscribeEvent
-    public static void register(final RegisterPayloadHandlersEvent event) {
-        //set the current network vversion
-        final PayloadRegistrar registrar = event.registrar("1")
-                .executesOn(HandlerThread.MAIN);
-
-        registrar.playToServer(
-                MyData.TYPE,
-                MyData.STREAM_CODEC, ClientPayloadHandler::handleDashEnchantmentUsed);
-
+            PacketDistributor.sendToServer( new MyData("Test", 30));
+        }
     }
-
 
 }

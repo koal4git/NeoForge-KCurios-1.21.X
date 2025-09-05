@@ -4,6 +4,7 @@ import net.koala.kcurios.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.DataMapProvider;
+import net.neoforged.neoforge.registries.datamaps.builtin.Compostable;
 import net.neoforged.neoforge.registries.datamaps.builtin.FurnaceFuel;
 import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 
@@ -24,5 +25,9 @@ public class ModDataMapProvider extends DataMapProvider {
     protected void gather() {
         this.builder(NeoForgeDataMaps.FURNACE_FUELS)
                 .add(ModItems.FLOUR.getId(), new FurnaceFuel(1200), false);
+
+        this.builder(NeoForgeDataMaps.COMPOSTABLES)
+                .add(ModItems.BELL_PEPPER_SEEDS, new Compostable(0.25f),false)
+                .add(ModItems.BELL_PEPPER, new Compostable(0.45f), false);
     }
 }

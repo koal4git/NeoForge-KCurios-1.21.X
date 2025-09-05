@@ -2,15 +2,22 @@ package net.koala.kcurios.item;
 
 import net.koala.kcurios.Kcurios;
 import net.koala.kcurios.block.ModBlocks;
+import net.koala.kcurios.enchantment.ModEnchantments;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Supplier;
 
 public class ModCreativeModeTabs {
@@ -57,6 +64,11 @@ public class ModCreativeModeTabs {
 
 
                         output.accept(ModItems.GOLDEN_LASSO);
+                        output.accept(Items.ENCHANTED_BOOK);
+
+                        output.accept(ModItems.BELL_PEPPER_SEEDS);
+                        output.accept(ModItems.STRAW_BERRIES);
+
                     }).build());
 
 

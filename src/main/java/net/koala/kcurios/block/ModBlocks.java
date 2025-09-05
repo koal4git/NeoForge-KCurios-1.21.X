@@ -2,7 +2,9 @@ package net.koala.kcurios.block;
 
 import net.koala.kcurios.Kcurios;
 import net.koala.kcurios.block.custom.AmethystLampBlock;
+import net.koala.kcurios.block.custom.BellPepperCropBlock;
 import net.koala.kcurios.block.custom.MagicBlock;
+import net.koala.kcurios.block.custom.StrawBerryBushBlock;
 import net.koala.kcurios.item.ModItems;
 import net.koala.kcurios.sound.ModSounds;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -86,6 +88,11 @@ public class ModBlocks {
                     .strength(3f).requiresCorrectToolForDrops()
                     .lightLevel(state -> state.getValue(AmethystLampBlock.CLICKED) ? 12 : 0)
                     .sound(SoundType.AMETHYST)));
+
+    public static final DeferredBlock<Block> BELL_PEPPER_CROP = BLOCKS.register("bell_pepper_crop",
+            () -> new BellPepperCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS)));
+    public static final DeferredBlock<Block> STRAW_BERRY_BUSH = BLOCKS.register("straw_berry_bush",
+            () -> new StrawBerryBushBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SWEET_BERRY_BUSH)));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

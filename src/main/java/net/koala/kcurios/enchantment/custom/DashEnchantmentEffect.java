@@ -12,6 +12,7 @@ public class DashEnchantmentEffect implements EnchantmentEntityEffect {
 
     @Override
     public void apply(ServerLevel level, int enchantmentLevel, EnchantedItemInUse item, Entity entity, Vec3 origin) {
+        /*
         // Only apply to players
         if (!entity.isAlive() || !(entity instanceof net.minecraft.world.entity.player.Player player)) {
             return;
@@ -28,6 +29,14 @@ public class DashEnchantmentEffect implements EnchantmentEntityEffect {
 
         // Optional: reset fall distance so dashing doesn’t cause fall damage
         player.resetFallDistance();
+
+    */
+
+
+
+
+
+
     }
 
     @Override

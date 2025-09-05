@@ -9,4 +9,8 @@ public class ModFoodProperties {
     public static final FoodProperties BELL_PEPPER = new FoodProperties.Builder().nutrition(3).saturationModifier(0.5f)
             .effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 300, 0), 0.25f).build();
 
+    public static final FoodProperties STRAW_BERRY = new FoodProperties.Builder()
+            .nutrition(2).saturationModifier(0.15f)
+            .fast().build();
+
 }

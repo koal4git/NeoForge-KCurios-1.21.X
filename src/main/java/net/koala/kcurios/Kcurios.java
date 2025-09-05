@@ -6,11 +6,16 @@ import net.koala.kcurios.effect.ModEffects;
 import net.koala.kcurios.enchantment.ModEnchantmentsEffects;
 import net.koala.kcurios.item.ModCreativeModeTabs;
 import net.koala.kcurios.item.ModItems;
+import net.koala.kcurios.networking.ClientPayloadHandler;
+import net.koala.kcurios.networking.MyData;
 import net.koala.kcurios.potion.ModPotions;
 import net.koala.kcurios.sound.ModSounds;
 import net.koala.kcurios.util.ModItemProperties;
+import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -28,6 +33,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
+import static net.koala.kcurios.event.ModClientEvents.DASH_KEY;
 
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -94,21 +100,33 @@ public class Kcurios {
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @EventBusSubscriber(modid = Kcurios.MOD_ID, value = Dist.CLIENT)
-    static class ClientModEvents {
-
-
-
+    @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            LOGGER.info("Initializing Kcurios client...");
+            // Some client setup code
+            LOGGER.info("HELLO FROM CLIENT SETUP");
 
             ModItemProperties.addCustomItemProperties();
 
-            LOGGER.info("PropHunt client initialization complete");
+            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+
+
+
+
+        }
+        @SubscribeEvent // on the mod event bus
+        public static void register(RegisterPayloadHandlersEvent event) {
+            // Sets the current network version
+            final PayloadRegistrar registrar = event.registrar("1");
+
+
+            registrar.playToServer(MyData.TYPE, MyData.STREAM_CODEC, ClientPayloadHandler::handleDashEnchantmentUsed);
         }
 
-
-
+        @SubscribeEvent // on the mod event bus only on the physical client
+        public static void registerBindings(RegisterKeyMappingsEvent event) {
+            event.register(DASH_KEY);
+        }
     }
 }
